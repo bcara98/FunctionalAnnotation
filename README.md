@@ -1,4 +1,4 @@
-# Team2-FunctionalAnnotation
+# FunctionalAnnotation
 
 ## Clustering
 
