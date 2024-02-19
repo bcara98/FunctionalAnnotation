@@ -1,0 +1,35 @@
+Tool	Functions annotated	Runtime	CPU/RAM usage	Installation requirements and dependencies	Database size	Documentation/github	input file format	output file format	your initials	Notes:
+diamond	clustering	4.12 s	47 MB max (see log for more)	conda: conda install -c bioconda diamond	none	https://github.com/bbuchfink/diamond	.faa or .dmnd	.tsv	LT	psrecord log /home/team2/group3/LT/diamond/diamond_test_log.txt
+MMseq2	clustering	20.22 s	47 MB max (see log for more)	conda: conda install -c conda-forge -c bioconda mmseqs2	none	https://mmseqs.com/latest/userguide.pdf	".fasta/fastq, mmseq DB"	.tsv	LT	psrecord log /home/team2/group3/LT/mmseqs/mmseqs_clust_test.log
+TMHMM	transmembrane proteins	27.18 s	3 MB (see log for more)	"installation through website request, perl dependency"	none	https://services.healthtech.dtu.dk/services/TMHMM-2.0/	.faa(.fasta)	.tsv (long format)	LT	
+diamond	antibiotic resistant genes	35.632s	2.973MB	https://card.mcmaster.ca/download/0/broadstreet-v3.2.6.tar.bz2	43.564 KB	https://github.com/bbuchfink/diamond	.fna	.tsv	AS	Script to loop through clustered reads (run in the same folder containing reads): /home/team2/group3/AS/card/card.sh
+rgi (for CARD database)	antibiotic resistant genes	169.91s	1.754MB	conda: conda install -c bioconda rgi	43.564 KB	https://github.com/arpcard/rgi#loading-card-reference-data	.fna	.tsv and .gff3	AS	Script to loop through clustered reads (run in the same folder containing reads): /home/team2/group3/AS/AMR/AMR.sh
+diamond	outer membrane proteins	360 s	3 MB (see log for more)	OMPdb.fasta	714Mb	http://www.ompdb.org/manual.php	OMPdb.dmnd and .faa	BLAST output + added qframe and qseq	LT	"script to loop through files on github ompdb_test.sh, psrecord log in /home/team2/group3/LT/ompdb/diamond"
+mmseq2	outer membrane proteins			OMPdb.fasta	714Mb	http://www.ompdb.org/manual.php	OMPdb.fasta and .faa	BLAST output + added qframe and qseq	LT	overall output and running time lacking in comparison to diamond. 
+Signalp 6.0	Signal peptide	1hr 12mins	2 GB	https://services.healthtech.dtu.dk/services/SignalP-6.0/	none	https://github.com/fteufel/signalp-6.0/blob/main/installation_instructions.md	.faa	".txt, gff3, gff"	KA	/home/team2/group3/all_results/signalp6.0
+MMseq2	"Virulence Factor, Prophages"	"5s VFDB /sample
+16s Prophage/sample"	"2.922MB
+2.9MB"	conda install -c conda-forge -c bioconda mmseqs2	"VFDB 1.1M
+PHROGS 53M"	https://github.com/soedinglab/MMseqs2	".faa, .fna, mmseqs database"	"sam,blast fm8"	KX	"/home/team2/group3/KX/virulence/mmseqs
+/home/team2/group3/KX/prophage/mmseqs"
+DIAMOND	"Virulence Factor, Prophages"	"1.8s VFDB/sample
+60s prophage/sample"	"28MB
+354.445MB"	wget wget http://github.com/bbuchfink/diamond/releases/download/v2.1.6/diamond-linux64.tar.gz	"VFDB 1.1M
+PHROGS 53M"	https://github.com/bbuchfink/diamond	"fna, faa, dmnd"	"sam,blast fm8"	KX	"/home/team2/group3/KX/virulence/diamond
+/home/team2/group3/KX/prophage/diamond"
+EGGNOG/diamond	orthologous genes	45m37.861s for all 50 files	3.125MB	conda install -c bioconda eggnog-mapper	5.62 MB for bacteria.dmnd	https://github.com/eggnogdb/eggnog-mapper/wiki	.fna	.tsv	AS	Script to loop through clustered reads (run in the same folder containing reads): /home/team2/group3/AS/EGGNOG/eggnog.sh
+COG/diamond	orthologous genes	12m27.830s for all 50 files	3.129MB	wget ftp://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/	3.76 MB	https://github.com/transcript/COG/blob/master/README.md	.fna	.tsv	AS	Script to loop through clustered reads (run in the same folder containing reads): /home/team2/group3/AS/cog/cog.sh
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										

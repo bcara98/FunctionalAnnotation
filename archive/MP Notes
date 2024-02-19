@@ -1,0 +1,15 @@
+# PANNZER (Protein ANNotation with Z-scoRE) is a fully automated service for functional annotation of prokaryotic and eukaryotic proteins of unknown function. The tool is designed to predict the functional description (DE) and GO classes.
+# 2 Ways to run. 
+# First way. Download output file to local computer. Run through Web server.  Input protein sequence in FASTA format and select batch processing
+scp mpham71@biogenome2023.biosci.gatech.edu:/home/team2/group3/data_from_group2/CGT2049.fq.gz ~/Downloads
+scp mpham71@biogenome2023.biosci.gatech.edu:/home/team2/group3/data_from_group2/CGT2010.fq.gz ~/Downloads
+scp mpham71@biogenome2023.biosci.gatech.edu:/home/team2/group3/data_from_group2/CGT2060.fq.gz ~/Downloads
+scp mpham71@biogenome2023.biosci.gatech.edu:/home/team2/group3/data_from_group2/CGT2006.fq.gz ~/Downloads
+scp mpham71@biogenome2023.biosci.gatech.edu:/home/team2/group3/data_from_group2/CGT2044.fq.gz ~/Downloads
+
+# Second way. Download script. It requires remote sequence search and GO database servers, so no database or servers need to be downloaded locally
+python runsanspanz.py -R -m Pannzer -s "Species name" -i data_from_group2/CGT2049.fq.gz -o ",DE.out,GO.out,anno.out"
+
+# Blast2GO
+# Blast2GO command line needs a Blast2GO database, which needs previous installation and configuration of a MySQL server. 
+# Blast2Go requires an activation key
